@@ -1,0 +1,3 @@
+# Create a ship with stocked torpedo stores that can fail
+GT4500,10,0,10,1
+TORPEDO,SINGLE  # first fired, but second makes failure
