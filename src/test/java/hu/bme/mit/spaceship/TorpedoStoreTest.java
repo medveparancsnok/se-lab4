@@ -68,7 +68,8 @@ class TorpedoStoreTest {
     void ship_SINGLE_failiure2(){
         GT4500 ship = new GT4500(10,0,10,1);
         boolean result = ship.fireTorpedo(FiringMode.SINGLE);
-        assertTrue(result);
+        result = ship.fireTorpedo(FiringMode.SINGLE);
+        assertFalse(result);
     }
 
     @Test
