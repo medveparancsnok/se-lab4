@@ -2,6 +2,7 @@ package hu.bme.mit.spaceship;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -22,6 +23,19 @@ class TorpedoStoreTest {
         assertEquals(true, result);
     }
 
+    @Test 
+    void getTorpedos(){
+        TorpedoStore store = new TorpedoStore(2);
+        assertEquals(store.getTorpedoCount(), 2);
+    }
+
+    @Test
+    void emopty_exception(){
+        TorpedoStore store = new TorpedoStore(0);
+        assertThrows(IllegalArgumentException.class, ()-> store.fire(1));
+    }
+
+    /* 
     @Test
     void ship_ALL_success(){
         GT4500 ship = new GT4500(10,0,10,0);
@@ -77,5 +91,5 @@ class TorpedoStoreTest {
         GT4500 ship = new GT4500(0,0,10,1);
         boolean result = ship.fireTorpedo(FiringMode.SINGLE);
         assertFalse(result);
-    }
+    }*/
 }

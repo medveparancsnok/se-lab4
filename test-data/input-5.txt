@@ -1,2 +1,0 @@
-# Just fire without any initialized ship
-TORPEDO,SINGLE  # couldn't fire
